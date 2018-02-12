@@ -14,7 +14,7 @@ lld fast_power(lld a,lld b,lld c = 1000000007){
 	return ret;
 }
 
-bool Miller_Rabin(long long num){
+bool miller_rabin(long long num){
 	long long t = 0,x = num-1;
 	while(x % 2 == 0)t++,x /= 2;
 	bool is = 1;
