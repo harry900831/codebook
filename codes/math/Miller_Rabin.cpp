@@ -19,17 +19,17 @@ bool Miller_Rabin(long long num){
 	while(x % 2 == 0)t++,x /= 2;
 	bool is = 1;
 	for(int i = 0 ; i < 3 && p[i] < num; i++){
-			lld v = fast_power(p[i],x,num);
-			if(v == 1 || v == num-1)continue;
-			bool tt = 0;
-			for(int i = 0 ; i < t-1 ; i++){
-				v= v*v%num;
-				if(v == num-1){
-					tt = 1;
-					break;
-				}
+		lld v = fast_power(p[i],x,num);
+		if(v == 1 || v == num-1)continue;
+		bool tt = 0;
+		for(int i = 0 ; i < t-1 ; i++){
+			v= v*v%num;
+			if(v == num-1){
+				tt = 1;
+				break;
 			}
-			if(!tt)is = 0;
+		}
+		if(!tt)is = 0;
 	}
 	return is;
 }
